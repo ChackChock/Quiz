@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Платформа заданий</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="page-tours" class="page">
+                <div class="header">
+                    <h1>🎓 Образовательная платформа</h1>
+                </div>
+
+                <div class="card">
+                    <h2 style="margin-bottom: 10px; color: #333;">Выберите
+                        тур</h2>
+                    <p style="color: #666; margin-bottom: 20px;">Выберите один
+                        из доступных туров для начала выполнения заданий</p>
+
+                    <div class="tours-grid">
+                        <div class="tour-card" onclick="selectTour('tour1')">
+                            <h3>📱 Тур 1: Основы</h3>
+                            <p>Базовые задания по всем направлениям</p>
+                        </div>
+                        <div class="tour-card" onclick="selectTour('tour2')">
+                            <h3>🚀 Тур 2: Продвинутый</h3>
+                            <p>Сложные задачи для углубления знаний</p>
+                        </div>
+                        <div class="tour-card" onclick="selectTour('tour3')">
+                            <h3>🏆 Тур 3: Мастер</h3>
+                            <p>Экспертный уровень для профессионалов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-tasks" class="page" style="display: none;">
+                <div class="header">
+                    <h1>📋 Выбор заданий</h1>
+                    <button class="back-btn" onclick="showPage('tours')">← Назад
+                        к турам</button>
+                </div>
+
+                <div class="card">
+                    <h2 style="margin-bottom: 20px; color: #333;"><span
+                            id="current-tour">1</span></h2>
+
+                    <table class="tasks-table">
+                        <thead>
+                            <tr>
+                                <th>Тема</th>
+                                <th>Задание</th>
+                                <th>Баллы</th>
+                                <th>Тип</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="page-task" class="page" style="display: none;">
+                <div class="header">
+                    <h1>📝 Задание</h1>
+                    <button class="back-btn" onclick="showPage('tasks')">← Назад
+                        к таблице</button>
+                </div>
+
+                <div class="card" id="task-content">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
