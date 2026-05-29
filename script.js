@@ -178,7 +178,7 @@ app.run()
                         type: "fix",
                         title: "Сводная таблица: средний рейтинг по категории и типу",
                         question: "Исправьте код для создания сводной таблицы со средним рейтингом",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                         code: `
 import pandas as pd
 
@@ -198,7 +198,7 @@ print(pivot.head())
                         type: "complete",
                         title: "Очистка данных: заполнение пропусков",
                         question: "Допишите код для обработки пропущенных значений в столбце Rating",
-                        files: ["GooglePlayStore_wild.csv"],
+                        files: ["files/GooglePlayStore_wild.csv"],
                         code: `
 import pandas as pd
 
@@ -220,7 +220,7 @@ df.info()
                         type: "write",
                         title: "Количество приложений с рейтингом выше среднего",
                         question: "Напиши код, который выведет количество приложений, чей рейтинг выше среднего по всему датасету",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                     },
                 ]
             },
@@ -257,7 +257,7 @@ df.info()
                         type: "fix",
                         title: "Предсказание выживших на Титанике (KNN)",
                         question: "Найдите и исправьте ошибки, чтобы программа корректно обучилась и вывела результат.",
-                        files: ["titanic_clear.csv"],
+                        files: ["files/titanic_clear.csv"],
                         code: `
 import pandas as pd
 
@@ -291,7 +291,7 @@ print("Процент правильно предсказанных исходо
                         type: "complete",
                         title: "Сравнение алгоритмов машинного обучения",
                         question: "Допишите код для сравнения четырёх алгоритмов машинного обучения на датасете «Титаник».<br><br>Программа должна:<ol><li>Разделить данные на обучающую и тестовую выборки в соотношении 70/30 (<code>test_size=0.3</code>).</li><li>В цикле для каждой модели из словаря <code>models</code>:<ul><li>Обучить модель на <code>X_train</code> и <code>y_train</code>;</li><li>Сделать предсказание для <code>X_test</code>;</li><li>Вычислить точность через <code>accuracy_score</code> и сохранить результат в словарь <code>results</code> под ключом <code>name</code>.</li></ul></li><li>Программа уже содержит код для вывода названия лучшего алгоритма и его точности в процентах.</li></ol>Напиши недостающие фрагменты кода. Когда закончишь — позови преподавателя для проверки.",
-                        files: ["titanic_clear.csv"],
+                        files: ["files/titanic_clear.csv"],
                         code: `
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
@@ -337,7 +337,7 @@ print(f"Лучший алгоритм: {best_model} (точность: {results[
                         type: "write",
                         title: "Предсказание погоды: Наивный Байес",
                         question: "На основе датасета <code>weatherData.csv</code> построй модель машинного обучения для предсказания состояния погоды (<code>Summary</code>).<br><br>Выполните следующие шаги:<ol><li>Загрузите данные из файла.</li><li>Выделите целевую переменную <code>y</code> — столбец <code>Summary</code>.</li><li>Сформируйте признаки <code>X</code>, удалив столбцы <code>date</code>, <code>Summary</code> и <code>Precip Type</code>.</li><li>Разделите данные на обучающую и тестовую выборки в соотношении 70/30 (<code>test_size=0.3</code>).</li><li>Обучите модель наивного байесовского классификатора (<code>GaussianNB</code>).</li><li>Сделайте предсказания для тестовой выборки и вычислите точность модели (<code>accuracy_score</code>).</li></ol>Напишите полный рабочий код в VSCode. Программа должна вывести значение точности. Когда закончите — позовите преподавателя для проверки.",
-                        files: ["weatherData.csv"],
+                        files: ["files/weatherData.csv"],
                     },
                 ]
             },
@@ -613,7 +613,7 @@ app.run()
                         type: "fix",
                         title: "Очистка: замена пропусков на медиану",
                         question: "Допишите код для заполнения пропусков в столбце Rating медианным значением",
-                        files: ["GooglePlayStore_wild.csv"],
+                        files: ["files/GooglePlayStore_wild.csv"],
                         code: `
 import pandas as pd
 
@@ -635,7 +635,7 @@ print(df["Rating"].isnull().sum())
                         type: "complete",
                         title: "Группировка: средний рейтинг по категориям",
                         question: "Допишите код для расчёта среднего рейтинга приложений в каждой категории",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                         code: `
 import pandas as pd
 
@@ -653,7 +653,7 @@ print(result.head())
                         type: "write",
                         title: "Статистика рейтинга по типу приложения",
                         question: "Напиши код, который выведет минимальный, средний и максимальный рейтинг ('Rating') для платных и бесплатных приложений ('Type') с точностью до десятых:<ul><li>Используй <code>groupby()</code> для группировки по столбцу 'Type';</li><li>Примени <code>agg()</code> со списком функций ['min', 'mean', 'max'];</li><li>Округли результат до 1 знака после запятой с помощью <code>round()</code>.</li></ul><b>Ожидаемый вывод:</b> таблица с двумя строками (Free/Paid) и тремя столбцами (min/mean/max).",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                     },
                 ]
             },
@@ -710,7 +710,7 @@ engine.save_to_file(phrase, "output.wav")
                         type: "complete",
                         title: "Распознавание речи (STT) с помощью vosk",
                         question: "Допишите пропущенные фрагменты кода для распознавания аудиофайла",
-                        files: ["vosk-model-small-ru-0.22.zip", "test-daniil.wav"],
+                        files: ["files/vosk-model-small-ru-0.22.zip", "files/test-daniil.wav"],
                         code: `
 from vosk import Model, KaldiRecognizer
 # === 1. Допишите импорты нужных библиотек ===
@@ -976,7 +976,7 @@ app.run()
                         type: "fix",
                         title: "Группировка по двум признакам: статистика отзывов",
                         question: "Исправьте код для группировки по типу и целевой аудитории с расчётом статистики отзывов",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                         code: `
 import pandas as pd
 
@@ -994,7 +994,7 @@ print(result)
                         type: "complete",
                         title: "Фильтрация: отбор платных приложений с высоким рейтингом",
                         question: "Допишите код для фильтрации приложений: цена > 0 и рейтинг >= 4.5",
-                        files: ["GoogleApps.csv"],
+                        files: ["files/GoogleApps.csv"],
                         code: `
 import pandas as pd
 
@@ -1013,7 +1013,7 @@ print(filtered[["App", "Price", "Rating"]].head())
                         type: "write",
                         title: "Очистка данных: преобразование размеров в МБ",
                         question: "Напиши код для очистки столбца 'Size' и перевода всех значений в Мегабайты (float):<ul><li>Загрузи датасет <code>'GooglePlayStore_wild.csv'</code>;</li><li>Создай функцию <code>clean_size(size)</code>, которая:<ul><li>если строка оканчивается на <code>'M'</code> — возвращает <code>float(size[:-1])</code>;</li><li>если оканчивается на <code>'k'</code> — возвращает <code>float(size[:-1]) / 1024</code>;</li><li>в остальных случаях возвращает <code>-1</code>;</li></ul></li><li>Примени функцию к столбцу <code>'Size'</code> с помощью <code>apply()</code>;</li><li>Выведи максимальный размер приложения в МБ для проверки корректности очистки.</li></ul><b>Ожидаемый вывод:</b> числовое значение > 0 (например, 100.0)",
-                        files: ["GooglePlayStore_wild.csv"],
+                        files: ["files/GooglePlayStore_wild.csv"],
                     },
                 ]
             },
@@ -1050,7 +1050,7 @@ print(filtered[["App", "Price", "Rating"]].head())
                         type: "fix",
                         title: "Обработка видео и каскады",
                         question: "Исправьте код.",
-                        files: ["haarcascade_fullbody.xml"],
+                        files: ["files/haarcascade_fullbody.xml"],
                         code: `
 import cv2
 
@@ -1101,7 +1101,7 @@ if __name__ == "__main__":
                         type: "complete",
                         title: "Обработка фото и каскады",
                         question: "Допиши программу для поиска человека на фотографии.",
-                        files: ["haarcascade_fullbody.xml"],
+                        files: ["files/haarcascade_fullbody.xml"],
                         code: `
 import cv2
 import matplotlib.pyplot as plt
