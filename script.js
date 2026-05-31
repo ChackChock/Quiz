@@ -1436,7 +1436,6 @@ function openTask(topicKey, taskId) {
     let html = `
                 <div class="task-header">
                     <div class="task-part">Часть ${task.points === 100 ? '1' : task.points === 200 ? '2' : '3'}</div>
-                    <div class="attempt-info">Попытка: 1/2</div>
                 </div>
                 <div class="task-question">${task.question}</div>
             `;

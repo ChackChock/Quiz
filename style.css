@@ -141,7 +141,6 @@ body {
     margin-top: 5px;
 }
 
-/* Task Interface */
 .task-header {
     display: flex;
     justify-content: space-between;
@@ -155,11 +154,6 @@ body {
     color: #667eea;
     font-size: 20px;
     font-weight: bold;
-}
-
-.attempt-info {
-    color: #666;
-    font-size: 14px;
 }
 
 .task-question {
